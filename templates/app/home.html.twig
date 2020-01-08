@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Добро пожаловать!{% endblock %}
+
+{% block body %}
+
+    <div class="preloadFull" id="preloadFull" style="display: none">
+        <div class="loaderFull" id="loaderFull"></div>
+    </div>
+
+    <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-2 shadow" id="navbarStyle">
+        <a class="navbar-brand" href="{{ path('mainpage') }}">
+            MySite
+            <button class="navbar-toggler d-md-none d-sm-block" type="button" data-toggle="collapse"
+                    data-target="#navbar"
+                    aria-controls="navbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <form>
+                            <a class="nav-link" href="{{ path('mainpage') }}">Выход <i
+                                        class="fas fa-sign-out-alt"></i></a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="justify-content-end d-none d-md-block">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <form>
+                            <a class="btn btn-info my-2 my-sm-0" href="{{ path('mainpage') }}">Выход <i
+                                        class="fas fa-sign-out-alt"></i></a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </a>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky" id="navbar1">
+
+                    <ul class="nav flex-column nav-tabs">
+
+                        <div id="categoryBlock">
+
+                            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                                <span><i class="fas fa-tree"></i> Категория 1 </span>
+                                <a class="d-flex align-items-center text-muted" href="#"></a>
+                            </h6>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('mainpage') }}">
+                                    Подкатегория 1
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('mainpage') }}">
+                                    Подкатегория 2
+                                </a>
+                            </li>
+                        </div>
+
+                        <div id="categoryBlock">
+
+                            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                                <span><i class="fas fa-tree"></i> Категория 2 </span>
+                                <a class="d-flex align-items-center text-muted" href="#"></a>
+                            </h6>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('mainpage') }}">
+                                    Подкатегория 1
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('mainpage') }}">
+                                    Подкатегория 2
+                                </a>
+                            </li>
+                        </div>
+
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                {% block content %}
+                    <h1>Привет!</h1>
+                {% endblock %}
+            </main>
+
+        </div>
+    </div>
+
+{% endblock %}
